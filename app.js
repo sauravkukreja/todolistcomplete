@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-mongoose.connect("mongodb+srv://saurav_kukreja:sauravkukreja123456@cluster0-ogjes.mongodb.net/todolistDB", {
+mongoose.connect("mongodb+srv://sauravkukreja:sk123456@cluster0-frimb.mongodb.net/todolist", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -48,20 +48,6 @@ const item3 = new Item({
 
 const defaultItems = [item1, item2, item3];
 
-// List.findOne({
-//   name: listName
-// }, function(err, foundList) {
-// if(!foundList){
-// console.log(listName+"<<<<<<<<<<<<<>>>>>>>>>>>>>>>>");
-//   List.find({}, function(err, foundItems) {
-//     console.log(foundItems.items);
-//   });
-//     Item.find({}, function(err, foundItems) {
-//       console.log(foundItems);
-//
-// });
-// }
-// });
 
 app.get("/", function(req, res) {
 
@@ -131,30 +117,9 @@ app.post("/", function(req, res) {
             foundList.save();
             res.redirect("/" + listName);
           });
-        // });
     }
 
 });
-    // List.findOne({
-    //   name: listName
-    // }, function(err, foundList) {
-    //
-    //     foundList.items.push(item);
-    //     foundList.save();
-    //     res.redirect("/" + listName);
-    //
-    // });
-
-
-
-
-  // if (req.body.list === "Work") {
-  //   workItems.push(item);
-  //   res.redirect("/work");
-  // } else {
-  //   items.push(item);
-  //   res.redirect("/");
-  // }
 
 
 app.post("/delete", function(req, res) {
@@ -181,17 +146,6 @@ app.post("/delete", function(req, res) {
 
 });
 
-
-// app.get("/work", function(req, res) {
-//   res.render("list", {
-//     listTitle: "Work List",
-//     newListItems: workItems
-//   });
-// });
-//
-// app.get("/about", function(req, res) {
-//   res.render("about");
-// });
 let port = process.env.PORT;
 if (port == null || port == ""){
   port = 3000;

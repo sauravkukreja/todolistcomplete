@@ -4,7 +4,9 @@ body {
   min-height: 100%;
   font-family: 'helvetica neue';
 }
-
+.row {
+  margin:0
+}
 h1 {
   color: #fff;
   padding: 10px;
@@ -99,18 +101,18 @@ footer {
  margin: auto;
 }
 
-@media(max-width : 700px){
-  input[type="text"] {
-    text-align: center;
-    height: 50px;
-  }
-  .box#heading{
-    margin-top: 20%;
-    padding-bottom: 0%;
+@media only screen and (max-width: 767px) {
 
-  }
-  body {
 
-    background-image: -webkit-linear-gradient(45deg, #A683E3 50%, #E4E9FD 50%);
-  }
+    .box#heading{
+      margin-top: 20%;
+      padding-bottom: 0%;
+
+    }
+    body {
+      font-size: large;
+      /* background-image: -webkit-linear-gradient(5deg, #A683E3 50%, #E4E9FD 50%); */
+      /* background-image: -webkit-linear-gradient(25deg, #A683E3 50%, #E4E9FD 50%); */
+
+    }
 }
